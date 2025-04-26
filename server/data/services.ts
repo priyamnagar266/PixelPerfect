@@ -77,5 +77,27 @@ export const services: Service[] = [
     link: "/services/ecommerce-development",
     linkColor: "#4DB6AC",
     fullDescription: "Our e-commerce development services create powerful online shopping experiences tailored to your unique business requirements. We develop custom storefronts using leading platforms like Shopify, WooCommerce, and Magento, implementing secure payment gateways, intuitive product catalogs, and inventory management systems. Our solutions include mobile optimization, advanced search functionality, personalized recommendation engines, and streamlined checkout processes designed to maximize conversion rates and customer satisfaction. We also provide ongoing support and optimization to ensure your online store continues to grow and adapt to changing market needs."
+  },
+  {
+    id: 8,
+    title: "Content Marketing",
+    description: "Strategic content creation that engages your audience and establishes thought leadership.",
+    icon: "newspaper",
+    iconBg: "rgba(126, 87, 194, 0.1)",
+    iconColor: "#7E57C2",
+    link: "/services/content-marketing",
+    linkColor: "#7E57C2",
+    fullDescription: "Our content marketing services help businesses create and distribute valuable, relevant content that attracts and engages target audiences. We develop comprehensive content strategies aligned with your business goals, from blog posts and whitepapers to videos and infographics. Our team of experienced writers and strategists conduct thorough research to understand your industry, audience, and competitors, ensuring each piece of content delivers maximum value. We also implement detailed performance tracking to continuously refine your content strategy, building long-term relationships with your audience while establishing your brand as an industry authority."
+  },
+  {
+    id: 9,
+    title: "Brand Strategy",
+    description: "Comprehensive brand development that communicates your unique value proposition.",
+    icon: "lightbulb",
+    iconBg: "rgba(255, 152, 0, 0.1)",
+    iconColor: "#FF9800",
+    link: "/services/brand-strategy",
+    linkColor: "#FF9800",
+    fullDescription: "Our brand strategy services help businesses define and express their unique identity in a competitive marketplace. We work closely with you to understand your company's vision, values, and competitive position, then develop a comprehensive brand strategy that resonates with your target audience. Our process includes market research, competitive analysis, audience profiling, positioning strategy, visual identity development, and messaging frameworks. We create cohesive brand experiences across all touchpoints, from your logo and website to marketing materials and customer interactions, ensuring your brand communicates consistently and effectively to build lasting connections with your audience."
   }
 ];

@@ -71,7 +71,7 @@ const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({ service, isOpen
                 className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 transition-colors"
                 aria-label="Close"
               >
-                <FontAwesomeIcon icon={['fas', 'times']} />
+                <FontAwesomeIcon icon={['fas', 'xmark']} />
               </button>
               
               <div className="p-6 md:p-8">
