@@ -82,7 +82,7 @@ export const services: Service[] = [
     id: 8,
     title: "Content Marketing",
     description: "Strategic content creation that engages your audience and establishes thought leadership.",
-    icon: "newspaper",
+    icon: "file-alt",
     iconBg: "rgba(126, 87, 194, 0.1)",
     iconColor: "#7E57C2",
     link: "/services/content-marketing",
