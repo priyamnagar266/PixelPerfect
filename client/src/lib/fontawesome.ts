@@ -11,7 +11,10 @@ import {
 
 import {
   faWhatsapp, faFacebook, faTwitter, faInstagram, 
-  faLinkedin, faGithub, faDribbble
+  faLinkedin, faGithub, faDribbble, faSpotify,
+  faAirbnb, faSlack, faAmazon, faDropbox, faMicrosoft,
+  faGoogle, faApple, faFigma, faShopify, faStripe,
+  faWordpress, faPinterest
 } from '@fortawesome/free-brands-svg-icons';
 
 // Add all icons to the library so you can use them in your app without importing them individually
@@ -26,5 +29,8 @@ library.add(
   
   // Brands
   faWhatsapp, faFacebook, faTwitter, faInstagram, 
-  faLinkedin, faGithub, faDribbble
+  faLinkedin, faGithub, faDribbble, faSpotify,
+  faAirbnb, faSlack, faAmazon, faDropbox, faMicrosoft,
+  faGoogle, faApple, faFigma, faShopify, faStripe,
+  faWordpress, faPinterest
 );
