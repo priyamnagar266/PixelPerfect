@@ -7,6 +7,7 @@ export const services = pgTable("services", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
   description: text("description").notNull(),
+  fullDescription: text("full_description"),
   icon: text("icon").notNull(),
   iconBg: text("icon_bg").notNull(),
   iconColor: text("icon_color").notNull(),
@@ -17,6 +18,7 @@ export const services = pgTable("services", {
 export const insertServiceSchema = createInsertSchema(services).pick({
   title: true,
   description: true,
+  fullDescription: true,
   icon: true, 
   iconBg: true,
   iconColor: true,
@@ -144,6 +146,23 @@ export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
 
-// Base types from schema.ts
+// Users schema
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  username: text("username").notNull().unique(),
+  password: text("password").notNull(),
+  name: text("name"),
+  email: text("email"),
+  role: text("role").default("user").notNull(),
+});
+
+export const insertUserSchema = createInsertSchema(users).pick({
+  username: true,
+  password: true,
+  name: true,
+  email: true,
+  role: true,
+});
+
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;

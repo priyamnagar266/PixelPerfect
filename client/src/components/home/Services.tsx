@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import ScrollReveal from '@/components/ui/scroll-reveal';
 import ServiceCard from '@/components/ui/service-card';
+import ServiceDetailModal from '@/components/ui/service-detail-modal';
+import { Service } from '@shared/schema';
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const { data: services = [], isLoading } = useQuery({
     queryKey: ['/api/services'],
   });
+
+  const handleServiceClick = (service: Service) => {
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <section id="services" className="py-20 bg-light">
@@ -40,18 +54,19 @@ const Services = () => {
             services.map((service, index) => (
               <ServiceCard
                 key={service.id || index}
-                icon={service.icon}
-                iconBg={service.iconBg}
-                iconColor={service.iconColor}
-                title={service.title}
-                description={service.description}
-                link={service.link}
-                linkColor={service.linkColor}
+                service={service}
+                onClick={handleServiceClick}
               />
             ))
           )}
         </div>
       </div>
+      
+      <ServiceDetailModal 
+        service={selectedService}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </section>
   );
 };
