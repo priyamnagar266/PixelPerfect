@@ -54,20 +54,7 @@ const Team = () => {
           )}
         </div>
         
-        <div className="text-center mt-12">
-          <ScrollReveal>
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white border-2 border-primary text-primary hover:bg-primary/5 rounded-full font-medium text-lg transition-all duration-300"
-              asChild
-            >
-              <a href="#">
-                Meet the full team <i className="fas fa-arrow-right ml-2"></i>
-              </a>
-            </Button>
-          </ScrollReveal>
-        </div>
+
       </div>
     </section>
   );

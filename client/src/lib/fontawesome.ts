@@ -6,7 +6,8 @@ import {
   faStore, faCode, faShoppingCart, faServer, faMobile,
   faDesktop, faGlobe, faRocket, faTools, faUserCog, 
   faDatabase, faCloud, faComments, faStar, faHeadset, 
-  faCaretRight, faCheck, faFileAlt, faLightbulb
+  faCaretRight, faCheck, faFileAlt, faLightbulb,
+  faExternalLinkAlt, faBuilding, faEnvelopeOpen, faPhone
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -26,6 +27,7 @@ library.add(
   faDesktop, faGlobe, faRocket, faTools, faUserCog,
   faDatabase, faCloud, faComments, faStar, faHeadset,
   faCaretRight, faCheck, faFileAlt, faLightbulb,
+  faExternalLinkAlt, faBuilding, faEnvelopeOpen, faPhone,
   
   // Brands
   faWhatsapp, faFacebook, faTwitter, faInstagram, 
