@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import "./lib/fontawesome"; // Import FontAwesome configuration
 
 createRoot(document.getElementById("root")!).render(
   <HelmetProvider>

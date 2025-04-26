@@ -1,15 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconName } from '@fortawesome/fontawesome-svg-core';
 import ScrollReveal from './scroll-reveal';
 
 export interface ServiceCardProps {
-  icon: string;
+  icon: IconName;
   iconBg: string;
   iconColor: string;
   title: string;
   description: string;
   link: string;
   linkColor: string;
+  fullDescription?: string;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -36,7 +39,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
           style={{ backgroundColor: iconBg }}
         >
-          <i className={`${icon} text-2xl`} style={{ color: iconColor }}></i>
+          <FontAwesomeIcon icon={['fas', icon]} size="lg" style={{ color: iconColor }} />
         </div>
         
         <h3 className="font-[Outfit] font-bold text-2xl mb-4">{title}</h3>
@@ -49,7 +52,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           whileHover={{ x: 5 }}
           transition={{ duration: 0.2 }}
         >
-          Learn more <i className="fas fa-arrow-right ml-2"></i>
+          Learn more <FontAwesomeIcon icon={['fas', 'arrow-right']} className="ml-2" />
         </motion.a>
       </motion.div>
     </ScrollReveal>
