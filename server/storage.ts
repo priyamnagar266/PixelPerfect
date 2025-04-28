@@ -1,12 +1,33 @@
 import { users, services, portfolioItems, teamMembers, blogPosts, testimonials, contactSubmissions } from "@shared/schema";
 import type { User, InsertUser, Service, PortfolioItem, TeamMember, BlogPost, Testimonial, ContactSubmission, InsertContactSubmission } from "@shared/schema";
-import { db } from "./db";
-import { eq } from "drizzle-orm";
 import session from "express-session";
-import connectPg from "connect-pg-simple";
-import { pool } from "./db";
+import createMemoryStore from "memorystore";
+import { memStorage } from "./mem-storage";
 
-const PostgresSessionStore = connectPg(session);
+// Create memory store for fallback
+const MemoryStore = createMemoryStore(session);
+
+let usePostgres = true;
+let db: any;
+let pool: any;
+let PostgresSessionStore: any;
+let eq: any;
+
+// Try to import PostgreSQL dependencies, but fail gracefully
+try {
+  const dbModule = require("./db");
+  db = dbModule.db;
+  pool = dbModule.pool;
+  const connectPg = require("connect-pg-simple");
+  const drizzleModule = require("drizzle-orm");
+  eq = drizzleModule.eq;
+  PostgresSessionStore = connectPg(session);
+  console.log("PostgreSQL dependencies loaded successfully");
+} catch (error) {
+  console.error("Failed to load PostgreSQL dependencies:", error);
+  console.log("Falling back to in-memory storage");
+  usePostgres = false;
+}
 
 // modify the interface with any CRUD methods
 // you might need
@@ -126,4 +147,5 @@ export class DatabaseStorage implements IStorage {
   }
 }
 
-export const storage = new DatabaseStorage();
+// Choose either PostgreSQL storage or in-memory storage
+export const storage = usePostgres ? new DatabaseStorage() : memStorage;
