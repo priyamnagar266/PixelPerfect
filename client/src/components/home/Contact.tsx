@@ -84,7 +84,7 @@ const Contact = () => {
               
               <div className="space-y-8">
                 <ContactInfoItem
-                  icon="fas fa-building"
+                  icon="fas fa-map-marker-alt"
                   title="Our Office"
                   details={[
                     '123 Creative Avenue, San Francisco, CA 94103, United States'
@@ -92,7 +92,7 @@ const Contact = () => {
                 />
                 
                 <ContactInfoItem
-                  icon="fas fa-envelope-open"
+                  icon="fas fa-envelope"
                   title="Email Us"
                   details={[
                     'hello@pixelperfect.agency',
@@ -101,22 +101,13 @@ const Contact = () => {
                 />
                 
                 <ContactInfoItem
-                  icon="fas fa-phone"
+                  icon="fas fa-phone-alt"
                   title="Call Us"
                   details={[
                     '+1 (415) 555-1234',
                     '+1 (415) 555-5678'
                   ]}
                 />
-                
-                <div className="mt-10">
-                  <button
-                    className="flex items-center gap-3 px-6 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full font-medium shadow-lg transition-all duration-300"
-                  >
-                    <i className="fab fa-whatsapp text-xl"></i>
-                    Chat on WhatsApp
-                  </button>
-                </div>
               </div>
             </ScrollReveal>
           </div>

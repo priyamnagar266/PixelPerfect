@@ -6,16 +6,12 @@ import {
   faStore, faCode, faShoppingCart, faServer, faMobile,
   faDesktop, faGlobe, faRocket, faTools, faUserCog, 
   faDatabase, faCloud, faComments, faStar, faHeadset, 
-  faCaretRight, faCheck, faFileAlt, faLightbulb,
-  faExternalLinkAlt, faBuilding, faEnvelopeOpen, faPhone
+  faCaretRight, faCheck
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
   faWhatsapp, faFacebook, faTwitter, faInstagram, 
-  faLinkedin, faGithub, faDribbble, faSpotify,
-  faAirbnb, faSlack, faAmazon, faDropbox, faMicrosoft,
-  faGoogle, faApple, faFigma, faShopify, faStripe,
-  faWordpress, faPinterest
+  faLinkedin, faGithub, faDribbble
 } from '@fortawesome/free-brands-svg-icons';
 
 // Add all icons to the library so you can use them in your app without importing them individually
@@ -26,13 +22,9 @@ library.add(
   faStore, faCode, faShoppingCart, faServer, faMobile,
   faDesktop, faGlobe, faRocket, faTools, faUserCog,
   faDatabase, faCloud, faComments, faStar, faHeadset,
-  faCaretRight, faCheck, faFileAlt, faLightbulb,
-  faExternalLinkAlt, faBuilding, faEnvelopeOpen, faPhone,
+  faCaretRight, faCheck,
   
   // Brands
   faWhatsapp, faFacebook, faTwitter, faInstagram, 
-  faLinkedin, faGithub, faDribbble, faSpotify,
-  faAirbnb, faSlack, faAmazon, faDropbox, faMicrosoft,
-  faGoogle, faApple, faFigma, faShopify, faStripe,
-  faWordpress, faPinterest
+  faLinkedin, faGithub, faDribbble
 );

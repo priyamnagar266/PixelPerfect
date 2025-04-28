@@ -67,7 +67,6 @@ export const blogPosts = pgTable("blog_posts", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
   excerpt: text("excerpt").notNull(),
-  fullContent: text("full_content"),
   image: text("image").notNull(),
   category: text("category").notNull(),
   categoryBg: text("category_bg").notNull(),
@@ -79,7 +78,6 @@ export const blogPosts = pgTable("blog_posts", {
 export const insertBlogPostSchema = createInsertSchema(blogPosts).pick({
   title: true,
   excerpt: true,
-  fullContent: true,
   image: true,
   category: true,
   categoryBg: true,

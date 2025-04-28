@@ -1,9 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes"; // Use the original routes file 
+import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-
-// Loading MongoDB is optional, storage.ts will handle the fallback logic
-console.log("Starting server with dynamic storage support...");
 
 const app = express();
 app.use(express.json());

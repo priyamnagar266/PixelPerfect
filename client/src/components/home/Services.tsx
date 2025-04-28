@@ -9,7 +9,7 @@ const Services = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  const { data: services = [], isLoading } = useQuery<Service[]>({
+  const { data: services = [], isLoading } = useQuery({
     queryKey: ['/api/services'],
   });
 
@@ -51,7 +51,7 @@ const Services = () => {
               </div>
             ))
           ) : (
-            services.map((service: Service, index: number) => (
+            services.map((service, index) => (
               <ServiceCard
                 key={service.id || index}
                 service={service}
