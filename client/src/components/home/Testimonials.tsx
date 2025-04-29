@@ -7,7 +7,17 @@ import TestimonialCard from '@/components/ui/testimonial-card';
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  const { data: testimonials = [], isLoading } = useQuery({
+  interface Testimonial {
+    id: string;
+    quote: string;
+    name: string;
+    position: string;
+    company: string;
+    image: string;
+    rating: number;
+  }
+
+  const { data: testimonials = [], isLoading } = useQuery<Testimonial[]>({
     queryKey: ['/api/testimonials'],
   });
 
@@ -34,7 +44,7 @@ const Testimonials = () => {
           </ScrollReveal>
         </div>
         
-        <div className="testimonial-slider relative max-w-5xl mx-auto">
+        <div className="testimonial-slider relative max-w-5xl mx-auto overflow-visible">
           {isLoading ? (
             // Loading skeleton
             <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg animate-pulse">
@@ -91,23 +101,23 @@ const Testimonials = () => {
           {!isLoading && testimonials.length > 0 && (
             <>
               <motion.button
-                className="testimonial-prev absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center focus:outline-none"
+                className="testimonial-prev absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 flex items-center justify-center focus:outline-none z-50"
                 onClick={handlePrev}
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.2 }}
                 aria-label="Previous testimonial"
               >
-                <i className="fas fa-chevron-left text-primary"></i>
+                <i className="fas fa-chevron-left text-black text-2xl"></i> {/* Arrow icon */}
               </motion.button>
               
               <motion.button
-                className="testimonial-next absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center focus:outline-none"
+                className="testimonial-next absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 flex items-center justify-center focus:outline-none z-50"
                 onClick={handleNext}
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.2 }}
                 aria-label="Next testimonial"
               >
-                <i className="fas fa-chevron-right text-primary"></i>
+                <i className="fas fa-chevron-right text-black text-2xl"></i> {/* Arrow icon */}
               </motion.button>
             </>
           )}

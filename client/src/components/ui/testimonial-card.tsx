@@ -39,7 +39,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         <div className="md:w-2/3">
           <div className="flex text-accent mb-4">
             {[...Array(rating)].map((_, i) => (
-              <i key={i} className="fas fa-star"></i>
+              <i key={i} className="fas fa-star"style={{ color: "yellow" }}></i>
             ))}
           </div>
           <blockquote className="text-lg md:text-xl text-gray-700 mb-6">"{quote}"</blockquote>

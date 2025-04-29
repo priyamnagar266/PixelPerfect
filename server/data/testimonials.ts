@@ -27,5 +27,33 @@ export const testimonials: Testimonial[] = [
     company: "EcoStyle",
     image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
     rating: 5
+  },
+  {
+    id: 4,
+    quote: "PixelPerfect's SEO expertise helped our website climb to the top rankings for several competitive keywords. We've seen a dramatic increase in organic traffic and inquiries. Their team is knowledgeable, transparent, and a pleasure to work with.",
+    name: "David Wilson",
+    position: "Head of Operations",
+    company: "NextGen Solutions",
+    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+    rating: 5
+  },
+  {
+    id: 5,
+    quote: "Our mobile app project with PixelPerfect was seamless from start to finish. They delivered a high-quality product on time and within budget, and the app’s intuitive design has received fantastic feedback from our users.",
+    name: "Olivia Martinez",
+    position: "Product Manager",
+    company: "HealthTrack",
+    image: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+    rating: 5
+  },
+  {
+    id: 6,
+    quote: "Choosing PixelPerfect for our cloud migration was one of the best decisions we made. Their thorough planning, execution, and ongoing support made the transition smooth and stress-free. Highly recommended for any business going digital.",
+    name: "James Patel",
+    position: "CTO",
+    company: "FinEdge",
+    image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+    rating: 5
   }
+  
 ];

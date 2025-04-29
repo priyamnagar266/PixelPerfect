@@ -32,7 +32,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <ScrollReveal>
       <motion.div 
-        className="service-card bg-white rounded-2xl p-8 shadow-lg transition-all duration-500 ease-in-out cursor-pointer"
+        className="service-card relative bg-white rounded-2xl p-8 shadow-lg transition-all duration-500 ease-in-out cursor-pointer"
         whileHover={{ 
           y: -8, 
           scale: 1.02,
@@ -41,6 +41,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         transition={{ duration: 0.3 }}
         onClick={handleClick}
       >
+       
         <div 
           className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
           style={{ backgroundColor: iconBg }}

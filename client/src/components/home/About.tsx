@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ScrollReveal from '@/components/ui/scroll-reveal';
+import CountUp from 'react-countup';
 
 const stats = [
-  { value: '250+', label: 'Projects completed' },
-  { value: '98%', label: 'Client satisfaction' },
-  { value: '40+', label: 'Industry awards' },
-  { value: '12', label: 'Countries served' },
+  { value: 250, label: 'Projects completed', suffix: '+' },
+  { value: 98, label: 'Client satisfaction', suffix: '%' },
+  { value: 40, label: 'Industry awards', suffix: '+' },
+  { value: 12, label: 'Countries served' },
 ];
 
 const About = () => {
@@ -57,7 +58,16 @@ const About = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <p className="font-[Outfit] font-bold text-4xl text-primary">{stat.value}</p>
+                    <p className="font-[Outfit] font-bold text-4xl text-primary">
+                      <CountUp 
+                        start={0} 
+                        end={stat.value} 
+                        duration={2} 
+                        suffix={stat.suffix || ''} 
+                        enableScrollSpy 
+                        scrollSpyOnce // Ensures the animation runs only once
+                      />
+                    </p>
                     <p className="text-gray-700">{stat.label}</p>
                   </motion.div>
                 ))}

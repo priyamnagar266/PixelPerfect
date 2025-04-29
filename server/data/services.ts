@@ -77,5 +77,28 @@ export const services: Service[] = [
     link: "/services/ecommerce-development",
     linkColor: "#4DB6AC",
     fullDescription: "Our e-commerce development services create powerful online shopping experiences tailored to your unique business requirements. We develop custom storefronts using leading platforms like Shopify, WooCommerce, and Magento, implementing secure payment gateways, intuitive product catalogs, and inventory management systems. Our solutions include mobile optimization, advanced search functionality, personalized recommendation engines, and streamlined checkout processes designed to maximize conversion rates and customer satisfaction. We also provide ongoing support and optimization to ensure your online store continues to grow and adapt to changing market needs."
-  }
+  },
+  {
+    id: 8,
+    title: "Cloud Solutions",
+    description: "Scalable cloud infrastructure and services to power your business growth.",
+    icon: "cloud",
+    iconBg: "rgba(74, 123, 247, 0.1)",
+    iconColor: "#4A7BF7",
+    link: "/services/cloud-solutions",
+    linkColor: "#4A7BF7",
+    fullDescription: "Our cloud solutions enable businesses to leverage the power, flexibility, and scalability of cloud computing. We specialize in cloud migration, infrastructure setup, and management using platforms like AWS, Azure, and Google Cloud. Our services include designing secure architectures, implementing disaster recovery plans, optimizing cloud costs, and ensuring compliance with industry standards. Whether you are moving to the cloud or optimizing an existing environment, we help you build a resilient digital foundation to support your business growth."
+  },
+  {
+    id: 9,
+    title: "Chatbot Development",
+    description: "Enhance customer engagement with intelligent, automated chatbot solutions.",
+    icon: "comments",
+    iconBg: "rgba(91, 112, 255, 0.1)",
+    iconColor: "#5B70FF",
+    link: "/services/chatbot-development",
+    linkColor: "#5B70FF",
+    fullDescription: "Our chatbot development services empower businesses to automate customer support, lead generation, and user engagement. We build AI-powered chatbots for websites, mobile apps, and social media platforms, offering personalized, 24/7 customer interaction. Our solutions integrate with CRM systems, support multilingual communication, and leverage natural language processing (NLP) for human-like conversations. Whether you need a support bot, sales assistant, or custom conversational AI, we deliver smart, scalable, and secure chatbot solutions tailored to your business goals."
+}
+
 ];

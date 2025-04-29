@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'wouter';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -13,7 +14,7 @@ const Footer = () => {
               </div>
               <span className="font-[Outfit] font-bold text-2xl text-white">PixelPerfect</span>
             </Link>
-            <p className="text-gray-400 mb-6 max-w-md">
+            <p className="text-black mb-6 max-w-md">
               We create beautiful digital experiences that help businesses grow and connect with their audience.
             </p>
             <div className="flex space-x-4">
@@ -25,7 +26,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-[Outfit] font-bold text-xl mb-6">Services</h3>
+            <h3 className="font-[Outfit] font-bold text-xl mb-6 text-black ">Services</h3>
             <ul className="space-y-4">
               <FooterLink href="#" text="Web Development" />
               <FooterLink href="#" text="App Development" />
@@ -36,7 +37,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-[Outfit] font-bold text-xl mb-6">Company</h3>
+            <h3 className="font-[Outfit] font-bold text-xl mb-6 text-black">Company</h3>
             <ul className="space-y-4">
               <FooterLink href="#" text="About Us" />
               <FooterLink href="#" text="Our Work" />
@@ -47,7 +48,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-[Outfit] font-bold text-xl mb-6">Support</h3>
+            <h3 className="font-[Outfit] font-bold text-xl mb-6 text-black">Support</h3>
             <ul className="space-y-4">
               <FooterLink href="#" text="Contact Us" />
               <FooterLink href="#" text="Privacy Policy" />
@@ -63,13 +64,13 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} PixelPerfect Agency. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+r            <a href="#" className="text-gray-400 hover:text-black transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="#" className="text-gray-400 hover:text-black transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="#" className="text-gray-400 hover:text-black transition-colors">
               Cookie Policy
             </a>
           </div>
@@ -80,19 +81,29 @@ const Footer = () => {
 };
 
 // Helper components
-const SocialLink = ({ href, icon }: { href: string; icon: string }) => (
-  <a 
-    href={href} 
-    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
-    aria-label={`Follow us on ${icon}`}
-  >
-    <i className={`fab fa-${icon}`}></i>
-  </a>
-);
+const SocialLink = ({ href, icon }: { href: string; icon: string }) => {
+  // Map each icon name to its corresponding React Icon component
+  const socialIcons: { [key: string]: JSX.Element } = {
+    "facebook-f": <FaFacebookF className="text-blue-600" />,
+    twitter: <FaTwitter className="text-blue-400" />,
+    instagram: <FaInstagram className="text-pink-500" />,
+    "linkedin-in": <FaLinkedinIn className="text-blue-700" />,
+  };
+
+  return (
+    <a
+      href={href}
+      className="w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110"
+      aria-label={`Follow us on ${icon}`}
+    >
+      {socialIcons[icon]}
+    </a>
+  );
+};
 
 const FooterLink = ({ href, text }: { href: string; text: string }) => (
   <li>
-    <a href={href} className="text-gray-400 hover:text-white transition-colors">
+    <a href={href} className="text-gray-400 hover:text-black transition-colors">
       {text}
     </a>
   </li>

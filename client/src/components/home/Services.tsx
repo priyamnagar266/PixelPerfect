@@ -9,7 +9,7 @@ const Services = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  const { data: services = [], isLoading } = useQuery({
+  const { data: services = [], isLoading } = useQuery<Service[]>({
     queryKey: ['/api/services'],
   });
 
@@ -55,7 +55,7 @@ const Services = () => {
               <ServiceCard
                 key={service.id || index}
                 service={service}
-                onClick={handleServiceClick}
+                onClick={() => handleServiceClick(service)} // Wrap the function to pass the service argument
               />
             ))
           )}

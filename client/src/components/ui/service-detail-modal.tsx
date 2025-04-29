@@ -74,6 +74,12 @@ const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({ service, isOpen
                 <FontAwesomeIcon icon={['fas', 'times']} />
               </button>
               
+              <div className="p-6">
+                <h2 className="text-2xl font-bold">{service?.title}</h2>
+                <p className="mt-4">{service?.description}</p>
+                {/* Other modal content */}
+              </div>
+              
               <div className="p-6 md:p-8">
                 <div className="flex items-center mb-6">
                   <div 

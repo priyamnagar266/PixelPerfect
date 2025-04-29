@@ -5,7 +5,7 @@ import ScrollReveal from '@/components/ui/scroll-reveal';
 import BlogCard from '@/components/ui/blog-card';
 
 const BlogPreview = () => {
-  const { data: blogPosts = [], isLoading } = useQuery({
+  const { data: blogPosts = [], isLoading } = useQuery<Array<{ id?: string; image: string; title: string; excerpt: string; category: string; categoryBg: string; categoryColor: string; date: string; link: string }>>({
     queryKey: ['/api/blog'],
   });
 
