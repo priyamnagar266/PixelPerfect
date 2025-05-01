@@ -95,8 +95,8 @@ const Contact = () => {
                   icon="fas fa-envelope"
                   title="Email Us"
                   details={[
-                    'hello@pixelperfect.agency',
-                    'info@pixelperfect.agency'
+                    'hello@PixelHeights.agency',
+                    'info@PixelHeights.agency'
                   ]}
                 />
                 

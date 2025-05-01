@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
                 <span className="text-white font-[Outfit] font-bold text-xl">P</span>
               </div>
-              <span className="font-[Outfit] font-bold text-2xl text-white">PixelPerfect</span>
+              <span className="font-[Outfit] font-bold text-2xl text-black">PixelHeights</span>
             </Link>
             <p className="text-black mb-6 max-w-md">
               We create beautiful digital experiences that help businesses grow and connect with their audience.
@@ -24,44 +24,24 @@ const Footer = () => {
               <SocialLink href="#" icon="linkedin-in" />
             </div>
           </div>
-          
           <div>
-            <h3 className="font-[Outfit] font-bold text-xl mb-6 text-black ">Services</h3>
-            <ul className="space-y-4">
-              <FooterLink href="#" text="Web Development" />
-              <FooterLink href="#" text="App Development" />
-              <FooterLink href="#" text="UI/UX Design" />
-              <FooterLink href="#" text="SEO Optimization" />
-              <FooterLink href="#" text="Digital Marketing" />
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-[Outfit] font-bold text-xl mb-6 text-black">Company</h3>
-            <ul className="space-y-4">
-              <FooterLink href="#" text="About Us" />
-              <FooterLink href="#" text="Our Work" />
-              <FooterLink href="#" text="Team" />
-              <FooterLink href="#" text="Blog" />
-              <FooterLink href="#" text="Careers" />
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-[Outfit] font-bold text-xl mb-6 text-black">Support</h3>
-            <ul className="space-y-4">
-              <FooterLink href="#" text="Contact Us" />
-              <FooterLink href="#" text="Privacy Policy" />
-              <FooterLink href="#" text="Terms of Service" />
-              <FooterLink href="#" text="FAQ" />
-              <FooterLink href="#" text="Sitemap" />
-            </ul>
+            <h3 className="font-[Outfit] font-bold text-xl mb-6 text-black">Our Location</h3>
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14007.306163454135!2d77.04416818001366!3d28.634960395970374!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sau!4v1746087848472!5m2!1sen!2sau"
+              width="600 px"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} PixelPerfect Agency. All rights reserved.
+            &copy; {new Date().getFullYear()} PixelHeights Agency. All rights reserved.
           </p>
           <div className="flex space-x-6">
 r            <a href="#" className="text-gray-400 hover:text-black transition-colors">

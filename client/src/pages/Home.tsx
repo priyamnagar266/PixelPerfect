@@ -18,22 +18,22 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>PixelPerfect | Web Development & Digital Marketing Agency</title>
-        <meta name="description" content="PixelPerfect is a premier web development and digital marketing agency creating beautiful, high-performing websites and digital experiences." />
-        <meta property="og:title" content="PixelPerfect Agency | Web Development & Digital Marketing" />
+        <title>PixelHeights | Web Development & Digital Marketing Agency</title>
+        <meta name="description" content="PixelHeights is a premier web development and digital marketing agency creating beautiful, high-performing websites and digital experiences." />
+        <meta property="og:title" content="PixelHeights Agency | Web Development & Digital Marketing" />
         <meta property="og:description" content="We build digital experiences that people love. Award-winning web development agency creating stunning websites, apps, and digital marketing solutions." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://pixelperfect.agency" />
+        <meta property="og:url" content="https://PixelHeights.agency" />
         <meta property="og:image" content="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              "name": "PixelPerfect Agency",
+              "name": "PixelHeights Agency",
               "description": "Web development and digital marketing agency creating beautiful, high-performing websites and digital experiences.",
               "image": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-              "url": "https://pixelperfect.agency",
+              "url": "https://PixelHeights.agency",
               "telephone": "+14155551234",
               "address": {
                 "@type": "PostalAddress",
@@ -61,10 +61,10 @@ const Home = () => {
                 "closes": "17:00"
               },
               "sameAs": [
-                "https://www.facebook.com/pixelperfectagency",
-                "https://www.twitter.com/pixelperfect",
-                "https://www.linkedin.com/company/pixelperfect",
-                "https://www.instagram.com/pixelperfectagency"
+                "https://www.facebook.com/PixelHeightsagency",
+                "https://www.twitter.com/PixelHeights",
+                "https://www.linkedin.com/company/PixelHeights",
+                "https://www.instagram.com/PixelHeightsagency"
               ]
             }
           `}

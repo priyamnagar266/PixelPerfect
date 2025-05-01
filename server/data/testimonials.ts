@@ -3,7 +3,7 @@ import { Testimonial } from "../../shared/schema";
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "PixelPerfect transformed our outdated website into a conversion machine. Their strategic approach to design and development resulted in a 45% increase in leads within the first month. The team was responsive, creative, and truly invested in our success.",
+    quote: "PixelHeights transformed our outdated website into a conversion machine. Their strategic approach to design and development resulted in a 45% increase in leads within the first month. The team was responsive, creative, and truly invested in our success.",
     name: "Sarah Johnson",
     position: "CEO",
     company: "TechStart",
@@ -12,7 +12,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    quote: "Working with PixelPerfect on our digital marketing campaign was a game-changer. Their data-driven approach and creative execution helped us reach our target audience with unprecedented precision. Our ROI increased by 320% compared to previous campaigns.",
+    quote: "Working with PixelHeights on our digital marketing campaign was a game-changer. Their data-driven approach and creative execution helped us reach our target audience with unprecedented precision. Our ROI increased by 320% compared to previous campaigns.",
     name: "Michael Thomas",
     position: "Marketing Director",
     company: "GlobalBrand",
@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    quote: "As a startup founder, I needed an agency that could handle both our branding and e-commerce development. PixelPerfect delivered beyond expectations, creating a cohesive brand identity and a seamless online shopping experience that our customers love.",
+    quote: "As a startup founder, I needed an agency that could handle both our branding and e-commerce development. PixelHeights delivered beyond expectations, creating a cohesive brand identity and a seamless online shopping experience that our customers love.",
     name: "Emily Rodriguez",
     position: "Founder",
     company: "EcoStyle",
@@ -30,7 +30,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    quote: "PixelPerfect's SEO expertise helped our website climb to the top rankings for several competitive keywords. We've seen a dramatic increase in organic traffic and inquiries. Their team is knowledgeable, transparent, and a pleasure to work with.",
+    quote: "PixelHeights's SEO expertise helped our website climb to the top rankings for several competitive keywords. We've seen a dramatic increase in organic traffic and inquiries. Their team is knowledgeable, transparent, and a pleasure to work with.",
     name: "David Wilson",
     position: "Head of Operations",
     company: "NextGen Solutions",
@@ -39,7 +39,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 5,
-    quote: "Our mobile app project with PixelPerfect was seamless from start to finish. They delivered a high-quality product on time and within budget, and the app’s intuitive design has received fantastic feedback from our users.",
+    quote: "Our mobile app project with PixelHeights was seamless from start to finish. They delivered a high-quality product on time and within budget, and the app’s intuitive design has received fantastic feedback from our users.",
     name: "Olivia Martinez",
     position: "Product Manager",
     company: "HealthTrack",
@@ -48,7 +48,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 6,
-    quote: "Choosing PixelPerfect for our cloud migration was one of the best decisions we made. Their thorough planning, execution, and ongoing support made the transition smooth and stress-free. Highly recommended for any business going digital.",
+    quote: "Choosing PixelHeights for our cloud migration was one of the best decisions we made. Their thorough planning, execution, and ongoing support made the transition smooth and stress-free. Highly recommended for any business going digital.",
     name: "James Patel",
     position: "CTO",
     company: "FinEdge",

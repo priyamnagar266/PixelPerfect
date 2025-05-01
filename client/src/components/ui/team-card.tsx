@@ -54,7 +54,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
               </a>
             ))}
             <a 
-              href={`mailto:contact@pixelperfect.agency?subject=Contact ${name}`}
+              href={`mailto:contact@PixelHeights.agency?subject=Contact ${name}`}
               className="text-gray-600 hover:text-primary transition-colors"
               aria-label={`Email ${name}`}
             >

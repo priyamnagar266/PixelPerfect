@@ -40,19 +40,19 @@ export const portfolioCategories = [
 
 // Company info
 export const companyInfo = {
-  name: 'PixelPerfect',
-  email: 'hello@pixelperfect.agency',
-  infoEmail: 'info@pixelperfect.agency',
+  name: 'PixelHeights',
+  email: 'hello@PixelHeights.agency',
+  infoEmail: 'info@PixelHeights.agency',
   phone: '+1 (415) 555-1234',
   altPhone: '+1 (415) 555-5678',
   address: '123 Creative Avenue, San Francisco, CA 94103, United States',
   foundedYear: 2012,
   teamSize: '30+',
   socialLinks: {
-    facebook: 'https://www.facebook.com/pixelperfectagency',
-    twitter: 'https://www.twitter.com/pixelperfect',
-    instagram: 'https://www.instagram.com/pixelperfectagency',
-    linkedin: 'https://www.linkedin.com/company/pixelperfect'
+    facebook: 'https://www.facebook.com/PixelHeightsagency',
+    twitter: 'https://www.twitter.com/PixelHeights',
+    instagram: 'https://www.instagram.com/PixelHeightsagency',
+    linkedin: 'https://www.linkedin.com/company/PixelHeights'
   }
 };
 

@@ -30,7 +30,7 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <p className="font-[Outfit] font-bold text-xl">10+ Years</p>
+                <p className="font-[Outfit] font-bold text-xl">3+ Years</p>
                 <p className="text-white/80">of experience</p>
               </motion.div>
             </div>
@@ -43,7 +43,7 @@ const About = () => {
                 We're a team of creative problem-solvers
               </h2>
               <p className="text-gray-700 text-lg mb-6">
-                Founded in 2012, PixelPerfect has grown from a small design studio to a full-service digital agency with a team of 30+ specialists across design, development, and marketing.
+                Founded in 2022, PixelHeights has grown from a small design studio to a full-service digital agency with a team of 30+ specialists across design, development, and marketing.
               </p>
               <p className="text-gray-700 text-lg mb-8">
                 We believe in creating digital experiences that not only look beautiful but drive real business results. Our collaborative approach ensures that every project meets both aesthetic and strategic goals.

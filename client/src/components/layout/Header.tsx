@@ -40,7 +40,7 @@ const Header = () => {
           <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
             <span className="text-white font-[Outfit] font-bold text-xl">P</span>
           </div>
-          <span className="font-[Outfit] font-bold text-2xl">PixelPerfect</span>
+          <span className="font-[Outfit] font-bold text-2xl">PixelHeights</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -121,7 +121,7 @@ const Header = () => {
                 <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
                   <span className="text-white font-[Outfit] font-bold text-xl">P</span>
                 </div>
-                <span className="font-[Outfit] font-bold text-2xl">PixelPerfect</span>
+                <span className="font-[Outfit] font-bold text-2xl">PixelHeights</span>
               </Link>
             </div>
             <nav className="flex flex-col space-y-6">
