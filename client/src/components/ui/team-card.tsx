@@ -21,12 +21,22 @@ const TeamCard: React.FC<TeamCardProps> = ({
   return (
     <ScrollReveal>
       <motion.div 
-        className="team-card bg-light rounded-xl overflow-hidden shadow-lg transition-all duration-500 ease-in-out"
-        whileHover={{ y: -8 }}
-        transition={{ duration: 0.3 }}
+        className="team-card group relative bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl border border-white/20 transition-all duration-500 ease-in-out cursor-pointer"
+        whileHover={{ 
+          y: -12,
+          scale: 1.02,
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.2), 0 0 30px rgba(59, 130, 246, 0.1)'
+        }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="relative overflow-hidden">
-          <img 
+        {/* Background Glow */}
+        <motion.div
+          className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-blue-500/10 to-purple-500/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-75 transition-opacity duration-500"
+          initial={false}
+        />
+        
+        <div className="relative overflow-hidden rounded-t-3xl">
+          <motion.img 
             src={image}
             alt={`${name}, ${position}`}
             className="w-full h-80 object-cover"

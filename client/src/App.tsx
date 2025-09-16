@@ -69,28 +69,45 @@ function BackToTopButton() {
   };
 
   return (
-    <button
+    <motion.button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 bg-primary w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 z-50 ${
-        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      className={`fixed bottom-8 right-8 w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-2xl transition-all duration-500 z-50 group ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8 pointer-events-none"
       }`}
+      style={{
+        background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, rgb(59, 130, 246) 100%)',
+      }}
+      whileHover={{ scale: 1.1, rotate: 5 }}
+      whileTap={{ scale: 0.9 }}
       aria-label="Back to top"
     >
-      <svg
+      <motion.div
+        className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 to-transparent"
+        animate={{ 
+          opacity: [0.2, 0.4, 0.2],
+          scale: [0.8, 1.2, 0.8] 
+        }}
+        transition={{ 
+          duration: 3, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
+      />
+      <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
+        className="h-6 w-6 relative z-10 group-hover:-translate-y-0.5 transition-transform duration-300"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
+        strokeWidth={2.5}
       >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={2}
           d="M5 10l7-7m0 0l7 7m-7-7v18"
         />
-      </svg>
-    </button>
+      </motion.svg>
+    </motion.button>
   );
 }
 

@@ -6,75 +6,104 @@ import AnimateElement from '@/lib/AnimateElement';
 const Hero = () => {
   return (
     <section className="pt-32 pb-20 md:pt-40 md:pb-32 px-4 overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[#FFD166]/10 to-[#4A7BF7]/10 -z-10"></div>
+      {/* Enhanced Background with Multiple Layers */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[#FFD166]/10 via-[#4A7BF7]/5 to-[#6366f1]/10"></div>
+        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#FFD166]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-white/50 to-transparent"></div>
+      </div>
+      
+      {/* Floating Elements */}
+      <motion.div
+        className="absolute top-32 left-10 w-8 h-8 bg-primary/20 rounded-full blur-sm"
+        animate={{ y: [0, -20, 0], rotate: [0, 180, 360] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/3 right-16 w-6 h-6 bg-[#FFD166]/30 rounded-full blur-sm"
+        animate={{ y: [0, 30, 0], x: [0, -10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-1/3 left-20 w-4 h-4 bg-primary/30 rounded-full blur-sm"
+        animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.8, 0.3] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      />
       
       <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full text-primary font-medium text-sm mb-8">
+              <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
+              New: AI-Powered Web Solutions Available
+            </div>
+          </motion.div>
+          
           <motion.h1 
-            className="font-[Outfit] font-bold text-4xl md:text-6xl leading-tight mb-6"
-            initial={{ opacity: 0, y: 20 }}
+            className="font-[Outfit] font-bold text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 bg-gradient-to-r from-gray-900 via-primary to-gray-900 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We build digital experiences that <span className="text-primary">people love</span>
+            We build digital experiences that <span className="bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent animate-pulse">people love</span>
           </motion.h1>
           
           <motion.p 
-            className="text-lg md:text-xl text-gray-700 mb-10 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Award-winning web development agency creating stunning websites, apps, and digital marketing solutions that drive growth.
+            Award-winning web development agency creating stunning websites, apps, and digital marketing solutions that drive growth and deliver exceptional user experiences.
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
+            className="flex flex-col sm:flex-row justify-center gap-6 mb-16"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary-dark text-white rounded-full font-medium text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white rounded-2xl font-semibold text-lg px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 group"
             >
-              <a href="#work">See our work</a>
+              <a href="#work" className="inline-flex items-center">
+                <span>See our work</span>
+                <motion.svg 
+                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </motion.svg>
+              </a>
             </Button>
             
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="bg-white border-2 border-primary text-primary hover:bg-primary/5 rounded-full font-medium text-lg transition-all duration-300"
+              className="bg-white/80 backdrop-blur-sm border-2 border-primary/20 text-primary hover:bg-primary/5 hover:border-primary/40 rounded-2xl font-semibold text-lg px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
-              <a href="#contact">Get in touch</a>
+              <a href="#contact" className="inline-flex items-center">
+                <span>Get in touch</span>
+                <motion.div
+                  className="ml-2 w-2 h-2 bg-primary rounded-full"
+                  animate={{ scale: [1, 1.5, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+              </a>
             </Button>
           </motion.div>
         </div>
-        
-        <AnimateElement delay={0.8}>
-          <div className="mt-20 relative">
-            <div className="bg-white shadow-2xl rounded-xl overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-                alt="Web development team working on a project" 
-                className="w-full h-auto object-cover"
-                loading="eager"
-              />
-            </div>
-            
-            <motion.div 
-              className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white py-3 px-6 rounded-full shadow-lg flex items-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-            >
-              <span className="w-3 h-3 bg-[#4CAF50] rounded-full mr-2"></span>
-              <span className="font-medium">Currently available for new projects</span>
-            </motion.div>
-          </div>
-        </AnimateElement>
       </div>
     </section>
   );
