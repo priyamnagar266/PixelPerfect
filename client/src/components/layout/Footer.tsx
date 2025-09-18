@@ -5,8 +5,8 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 const Footer = () => {
   return (
     <footer className="bg-dark text-white pt-20 pb-10">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-16">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-6">
               <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
@@ -26,20 +26,22 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-[Outfit] font-bold text-xl mb-6 text-black">Our Location</h3>
-            <iframe
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14007.306163454135!2d77.04416818001366!3d28.634960395970374!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sau!4v1746087848472!5m2!1sen!2sau"
-              width="600 px"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen={true}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <div className="w-full aspect-video rounded-xl overflow-hidden">
+              <iframe
+                title="Google Map"
+                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14007.306163454135!2d77.04416818001366!3d28.634960395970374!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sau!4v1746087848472!5m2!1sen!2sau"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
         
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+  <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 mb-4 md:mb-0">
             &copy; {new Date().getFullYear()} PixelHeights Agency. All rights reserved.
           </p>

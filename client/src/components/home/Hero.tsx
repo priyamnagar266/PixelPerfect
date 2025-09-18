@@ -31,8 +31,8 @@ const Hero = () => {
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
       
-      <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto text-center">
+  <div className="container mx-auto px-4 sm:px-6">
+  <div className="max-w-4xl mx-auto text-center">
           <motion.div
             className="mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -46,22 +46,15 @@ const Hero = () => {
           </motion.div>
           
           <motion.h1 
-            className="font-[Outfit] font-bold text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 bg-gradient-to-r from-gray-900 via-primary to-gray-900 bg-clip-text text-transparent"
+            className="font-[Outfit] font-bold text-3xl xs:text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 bg-gradient-to-r from-gray-900 via-primary to-gray-900 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We build digital experiences that <span className="bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent animate-pulse">people love</span>
+            We <span className="bg-gradient-to-r from-yellow-400 to-yellow-700 bg-clip-text text-transparent drop-shadow-md">build</span> digital <span className="bg-gradient-to-r from-yellow-400 to-yellow-700 bg-clip-text text-transparent drop-shadow-md">experiences</span> that <span className="bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent animate-pulse">people love</span>
           </motion.h1>
           
-          <motion.p 
-            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Award-winning web development agency creating stunning websites, apps, and digital marketing solutions that drive growth and deliver exceptional user experiences.
-          </motion.p>
+          {/* Removed hero description paragraph as requested */}
           
           <motion.div 
             className="flex flex-col sm:flex-row justify-center gap-6 mb-16"

@@ -50,83 +50,22 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
         </div>
         
         {/* Enhanced Overlay */}
-        <motion.div 
-          className="absolute inset-0 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-all duration-500"
-          style={{ 
-            background: `linear-gradient(45deg, ${overlayColor}E6, ${overlayColor}CC)`
-          }}
-          whileHover={{ 
-            background: `linear-gradient(45deg, ${overlayColor}F2, ${overlayColor}E6)`
-          }}
-        >
-          {/* Floating Elements */}
-          <motion.div
-            className="absolute top-6 right-6 w-3 h-3 bg-white/40 rounded-full blur-sm"
-            animate={{ 
-              scale: [1, 1.5, 1],
-              opacity: [0.4, 0.8, 0.4] 
-            }}
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-          />
-          
-          <motion.h3 
-            className="font-[Outfit] font-bold text-3xl text-white mb-3 text-shadow-lg"
-            initial={{ y: 20, opacity: 0 }}
-            whileHover={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.1, duration: 0.3 }}
+          <div 
+            className="absolute inset-0 flex flex-col justify-center items-center p-6 text-white bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
           >
-            {title}
-          </motion.h3>
-          
-          <motion.p 
-            className="text-white/90 mb-6 text-lg leading-relaxed"
-            initial={{ y: 20, opacity: 0 }}
-            whileHover={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.3 }}
-          >
-            {description}
-          </motion.p>
-          
-          <motion.div 
-            className="flex flex-wrap gap-3"
-            initial={{ y: 20, opacity: 0 }}
-            whileHover={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.3 }}
-          >
-            {tags.map((tag, index) => (
-              <motion.span 
-                key={index} 
-                className="bg-white/25 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full border border-white/20 font-medium"
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.35)' }}
-                transition={{ duration: 0.2 }}
-              >
-                {tag}
-              </motion.span>
-            ))}
-          </motion.div>
-          
-          {/* View Project Button */}
-          <motion.div 
-            className="mt-6 inline-flex items-center text-white font-semibold text-lg group/button"
-            initial={{ y: 20, opacity: 0 }}
-            whileHover={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.3 }}
-          >
-            <span className="group-hover/button:mr-2 transition-all duration-300">View Project</span>
-            <motion.svg 
-              className="ml-2 w-5 h-5 group-hover/button:translate-x-1 transition-transform duration-300" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </motion.svg>
-          </motion.div>
-        </motion.div>
+            <h3 className="font-[Outfit] font-bold text-2xl md:text-3xl text-white mb-3 text-shadow-lg text-center w-full break-words">{title}</h3>
+            <p className="text-white/90 mb-4 text-base md:text-lg leading-relaxed text-center w-full break-words">{description}</p>
+            <div className="flex flex-wrap gap-3 justify-center w-full">
+              {tags.map((tag, index) => (
+                <span 
+                  key={index} 
+                  className="bg-white/25 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full border border-white/20 font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         
         {/* Quick Info Badge */}
         <motion.div

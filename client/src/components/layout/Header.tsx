@@ -5,15 +5,25 @@ import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const navItems = [
-  { name: 'Services', href: '#services' },
+  { name: 'Services', href: '/services' },
   { name: 'Work', href: '#work' },
   { name: 'About', href: '#about' },
   { name: 'Team', href: '#team' },
   { name: 'Blog', href: '#blog' },
-  { name: 'Contact', href: '#contact' },
 ];
 
 const Header = () => {
+  // Smooth scroll handler
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const el = document.querySelector(href);
+      if (el) {
+        (el as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+      }
+      setMobileMenuOpen(false);
+    }
+  };
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
@@ -34,14 +44,17 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${
-      isScrolled 
-        ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-white/20' 
-        : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+    <header
+      className={
+        'fixed w-full z-50 transition-all duration-500 ' +
+        (isScrolled
+          ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-white/20 '
+          : 'bg-transparent ')
+      }
+    >
+      <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-3 z-50 group">
-          <motion.div 
+          <motion.div
             className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300"
             whileHover={{ scale: 1.05, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
@@ -65,6 +78,7 @@ const Header = () => {
               <a
                 href={item.href}
                 className="relative px-4 py-2 font-medium text-gray-700 hover:text-primary transition-all duration-300 group rounded-xl"
+                onClick={e => handleNavClick(e, item.href)}
               >
                 <span className="relative z-10">{item.name}</span>
                 <motion.div
@@ -152,37 +166,26 @@ const Header = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: '-100%', opacity: 0 }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 left-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl z-40 border-r border-gray-200/50"
+            className="fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white shadow-2xl z-40 border-r border-gray-200/50 md:w-80"
           >
-            {/* Background Pattern */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5" />
-            
-            <div className="relative p-8">
-              <div className="flex justify-between items-center mb-12">
-                <Link 
-                  href="/" 
-                  className="flex items-center space-x-3 group" 
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <motion.div 
-                    className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg"
-                    whileHover={{ scale: 1.05, rotate: 5 }}
-                  >
-                    <span className="text-white font-[Outfit] font-bold text-xl">P</span>
-                  </motion.div>
-                  <span className="font-[Outfit] font-bold text-2xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                    PixelHeights
-                  </span>
-                </Link>
-              </div>
-              
+            {/* Force solid white background for mobile menu bar */}
+            <div className="fixed top-0 left-0 w-screen h-screen bg-white z-10 md:w-80"></div>
+            <div className="relative p-8 pt-4 z-20">
+              {/* Remove duplicate logo in mobile menu */}
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="absolute top-4 right-4 text-3xl text-gray-500 hover:text-black focus:outline-none bg-white/80 rounded-full p-2 shadow"
+                aria-label="Close menu"
+              >
+                &times;
+              </button>
               <nav className="flex flex-col space-y-2">
                 {navItems.map((item, index) => (
                   <motion.a
                     key={item.name}
                     href={item.href}
                     className="relative group px-4 py-4 font-semibold text-lg text-gray-700 hover:text-primary transition-all duration-300 rounded-2xl hover:bg-primary/5"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={e => handleNavClick(e, item.href)}
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: index * 0.1 }}
@@ -222,19 +225,7 @@ const Header = () => {
                 </motion.div>
               </nav>
               
-              {/* Decorative Elements */}
-              <motion.div
-                className="absolute bottom-8 right-8 w-20 h-20 bg-primary/10 rounded-full blur-xl"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.6, 0.3] 
-                }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-              />
+              {/* Removed all decorative/blur/gradient backgrounds for a solid white menu */}
             </div>
           </motion.div>
         )}
@@ -248,7 +239,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 md:hidden"
+            className="fixed inset-0 bg-transparent z-30 md:hidden"
             onClick={() => setMobileMenuOpen(false)}
           />
         )}
