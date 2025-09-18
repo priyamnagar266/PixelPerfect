@@ -7,6 +7,7 @@ import TeamCard from '@/components/ui/team-card';
 const Team = () => {
   const { data: teamMembers = [], isLoading } = useQuery({
     queryKey: ['/api/team'],
+    queryFn: () => fetch('/api/team').then(res => res.json()),
   });
 
   return (
@@ -42,7 +43,7 @@ const Team = () => {
               </div>
             ))
           ) : (
-            teamMembers.map((member, index) => (
+            teamMembers.map((member: any, index: number) => (
               <TeamCard
                 key={member.id || index}
                 image={member.image}

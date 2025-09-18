@@ -19,6 +19,7 @@ const Testimonials = () => {
 
   const { data: testimonials = [], isLoading } = useQuery<Testimonial[]>({
     queryKey: ['/api/testimonials'],
+    queryFn: () => fetch('/api/testimonials').then(res => res.json()),
   });
 
   const handleNext = () => {

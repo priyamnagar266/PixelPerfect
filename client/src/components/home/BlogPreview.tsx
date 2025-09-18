@@ -7,6 +7,7 @@ import BlogCard from '@/components/ui/blog-card';
 const BlogPreview = () => {
   const { data: blogPosts = [], isLoading } = useQuery<Array<{ id?: string; image: string; title: string; excerpt: string; category: string; categoryBg: string; categoryColor: string; date: string; link: string }>>({
     queryKey: ['/api/blog'],
+    queryFn: () => fetch('/api/blog').then(res => res.json()),
   });
 
   return (
