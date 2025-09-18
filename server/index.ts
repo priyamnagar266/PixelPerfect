@@ -2,9 +2,14 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
+import { setupCors } from "./cors";
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Enable CORS for API
+setupCors(app);
 
 app.use((req, res, next) => {
   const start = Date.now();
