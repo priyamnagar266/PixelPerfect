@@ -5,9 +5,10 @@ import ScrollReveal from '@/components/ui/scroll-reveal';
 import BlogCard from '@/components/ui/blog-card';
 
 const BlogPreview = () => {
+  const API_URL = import.meta.env.VITE_API_URL;
   const { data: blogPosts = [], isLoading } = useQuery<Array<{ id?: string; image: string; title: string; excerpt: string; category: string; categoryBg: string; categoryColor: string; date: string; link: string }>>({
     queryKey: ['/api/blog'],
-    queryFn: () => fetch('/api/blog').then(res => res.json()),
+    queryFn: () => fetch(`${API_URL ? API_URL : ''}/api/blog`).then(res => res.json()),
   });
 
   return (

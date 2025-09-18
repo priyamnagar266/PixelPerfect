@@ -5,9 +5,10 @@ import ScrollReveal from '@/components/ui/scroll-reveal';
 import TeamCard from '@/components/ui/team-card';
 
 const Team = () => {
+  const API_URL = import.meta.env.VITE_API_URL;
   const { data: teamMembers = [], isLoading } = useQuery({
     queryKey: ['/api/team'],
-    queryFn: () => fetch('/api/team').then(res => res.json()),
+    queryFn: () => fetch(`${API_URL ? API_URL : ''}/api/team`).then(res => res.json()),
   });
 
   return (

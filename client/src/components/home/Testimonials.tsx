@@ -17,9 +17,10 @@ const Testimonials = () => {
     rating: number;
   }
 
+  const API_URL = import.meta.env.VITE_API_URL;
   const { data: testimonials = [], isLoading } = useQuery<Testimonial[]>({
     queryKey: ['/api/testimonials'],
-    queryFn: () => fetch('/api/testimonials').then(res => res.json()),
+    queryFn: () => fetch(`${API_URL ? API_URL : ''}/api/testimonials`).then(res => res.json()),
   });
 
   const handleNext = () => {

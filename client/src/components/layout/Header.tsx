@@ -53,18 +53,20 @@ const Header = () => {
       }
     >
       <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-3 z-50 group">
-          <motion.div
-            className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300"
-            whileHover={{ scale: 1.05, rotate: 5 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-white font-[Outfit] font-bold text-xl">P</span>
-          </motion.div>
-          <span className="font-[Outfit] font-bold text-2xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-primary group-hover:to-blue-600 transition-all duration-300">
-            PixelHeights
-          </span>
-        </Link>
+        {!mobileMenuOpen && (
+          <Link href="/" className="flex items-center space-x-3 z-50 group">
+            <motion.div
+              className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-white font-[Outfit] font-bold text-xl">P</span>
+            </motion.div>
+            <span className="font-[Outfit] font-bold text-2xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-primary group-hover:to-blue-600 transition-all duration-300">
+              PixelHeights
+            </span>
+          </Link>
+        )}
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
@@ -111,34 +113,19 @@ const Header = () => {
         </nav>
 
         {/* Enhanced Mobile Menu Button */}
-        <motion.button
-          onClick={toggleMobileMenu}
-          className="md:hidden relative w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-gray-800 focus:outline-none z-50 hover:bg-white/20 transition-all duration-300"
-          aria-expanded={mobileMenuOpen}
-          aria-label="Toggle menu"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <motion.div
-            animate={mobileMenuOpen ? { rotate: 180 } : { rotate: 0 }}
-            transition={{ duration: 0.3 }}
+        {!mobileMenuOpen && (
+          <motion.button
+            onClick={toggleMobileMenu}
+            className="md:hidden relative w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-gray-800 focus:outline-none z-50 hover:bg-white/20 transition-all duration-300"
+            aria-expanded={mobileMenuOpen}
+            aria-label="Toggle menu"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            {mobileMenuOpen ? (
-              <svg 
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-                strokeWidth={2.5}
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  d="M6 18L18 6M6 6l12 12" 
-                />
-              </svg>
-            ) : (
+            <motion.div
+              animate={mobileMenuOpen ? { rotate: 180 } : { rotate: 0 }}
+              transition={{ duration: 0.3 }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -153,9 +140,9 @@ const Header = () => {
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
-            )}
-          </motion.div>
-        </motion.button>
+            </motion.div>
+          </motion.button>
+        )}
       </div>
 
       {/* Enhanced Mobile Navigation */}
@@ -171,14 +158,23 @@ const Header = () => {
             {/* Force solid white background for mobile menu bar */}
             <div className="fixed top-0 left-0 w-screen h-screen bg-white z-10 md:w-80"></div>
             <div className="relative p-8 pt-4 z-20">
-              {/* Remove duplicate logo in mobile menu */}
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="absolute top-4 right-4 text-3xl text-gray-500 hover:text-black focus:outline-none bg-white/80 rounded-full p-2 shadow"
-                aria-label="Close menu"
-              >
-                &times;
-              </button>
+              {/* PixelHeights logo at the top of mobile menu */}
+              <div className="flex items-center justify-between mb-8 mt-2">
+                <div className="flex items-center space-x-3">
+                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg">
+                    <span className="text-white font-[Outfit] font-bold text-xl">P</span>
+                  </div>
+                  <span className="font-[Outfit] font-bold text-2xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">PixelHeights</span>
+                </div>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-3xl text-gray-500 hover:text-black focus:outline-none bg-white/80 rounded-full p-2 shadow ml-4"
+                  aria-label="Close menu"
+                >
+                  &times;
+                </button>
+              </div>
+              {/* Nav links start below the logo */}
               <nav className="flex flex-col space-y-2">
                 {navItems.map((item, index) => (
                   <motion.a
