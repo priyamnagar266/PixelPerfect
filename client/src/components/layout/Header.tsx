@@ -6,8 +6,8 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const navItems = [
   { name: 'Services', href: '/services' },
-  { name: 'Work', href: '#work' },
-  { name: 'About', href: '#about' },
+  { name: 'Work', href: '/work' },
+  { name: 'About', href: '/about' },
   { name: 'Team', href: '#team' },
   { name: 'Blog', href: '#blog' },
 ];
@@ -55,13 +55,13 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         {!mobileMenuOpen && (
           <Link href="/" className="flex items-center space-x-3 z-50 group">
-            <motion.div
-              className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300"
+            <motion.img
+              src="https://i.postimg.cc/pTYCTHVN/image.png"
+              alt="PixelHeights Logo"
+              className="h-9 w-9 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 object-contain bg-white"
               whileHover={{ scale: 1.05, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-white font-[Outfit] font-bold text-xl">P</span>
-            </motion.div>
+            />
             <span className="font-[Outfit] font-bold text-2xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-primary group-hover:to-blue-600 transition-all duration-300">
               PixelHeights
             </span>

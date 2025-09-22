@@ -10,14 +10,18 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Home from "@/pages/Home";
 import ServicesPage from "@/pages/Services";
+import Work from "@/pages/Work";
+import About from "@/pages/About";
 
 function Router() {
   return (
     <AnimatePresence mode="wait">
       <Switch>
-        <Route path="/" component={Home} />
+  <Route path="/" component={Home} />
   <Route path="/services" component={ServicesPage} />
-        <Route component={NotFound} />
+  <Route path="/work" component={Work} />
+  <Route path="/about" component={About} />
+  <Route component={NotFound} />
       </Switch>
     </AnimatePresence>
   );

@@ -1,17 +1,16 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import AnimateElement from '@/lib/AnimateElement';
+import Hyperspeed from '@/components/Hyperspeed';
 
 const Hero = () => {
   return (
     <section className="pt-32 pb-20 md:pt-40 md:pb-32 px-4 overflow-hidden relative">
-      {/* Enhanced Background with Multiple Layers */}
+      {/* Hyperspeed Animated Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[#FFD166]/10 via-[#4A7BF7]/5 to-[#6366f1]/10"></div>
-        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#FFD166]/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-white/50 to-transparent"></div>
+        <Hyperspeed />
       </div>
       
       {/* Floating Elements */}
